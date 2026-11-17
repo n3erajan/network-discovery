@@ -11,26 +11,8 @@ not required on the target system.
 
 ## Download
 
-Prebuilt Linux and Windows executables are attached to each
-[GitHub release](https://github.com/n3erajan/network-discovery/releases/latest).
-
-Download the latest Linux AMD64 build directly:
-
-```bash
-curl -L https://github.com/n3erajan/network-discovery/releases/latest/download/discover-linux-amd64 -o discover
-chmod +x discover
-./discover --help
-```
-
-Other direct downloads:
-
-- [Linux AMD64](https://github.com/n3erajan/network-discovery/releases/latest/download/discover-linux-amd64)
-- [Linux ARM64](https://github.com/n3erajan/network-discovery/releases/latest/download/discover-linux-arm64)
-- [Linux 386](https://github.com/n3erajan/network-discovery/releases/latest/download/discover-linux-386)
-- [Windows AMD64](https://github.com/n3erajan/network-discovery/releases/latest/download/discover-windows-amd64.exe)
-- [Windows ARM64](https://github.com/n3erajan/network-discovery/releases/latest/download/discover-windows-arm64.exe)
-- [Windows 386](https://github.com/n3erajan/network-discovery/releases/latest/download/discover-windows-386.exe)
-- [SHA-256 checksums](https://github.com/n3erajan/network-discovery/releases/latest/download/SHA256SUMS)
+Download the appropriate Linux or Windows executable from the
+[latest GitHub Release](https://github.com/n3erajan/network-discovery/releases/latest).
 
 ## Usage
 
@@ -72,7 +54,7 @@ Options:
 
 Options may appear before or after the target.
 
-## Build
+## Build from source
 
 Build a standalone executable for the current system:
 
@@ -98,20 +80,6 @@ Copy the binary matching the destination operating system and CPU architecture.
 A single executable cannot run across different operating systems or CPU
 architectures, but each generated executable has no Python or Go runtime
 dependency.
-
-### Publish a GitHub release
-
-The release workflow in `.github/workflows/release.yml` runs whenever a version
-tag is pushed. For example:
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-GitHub Actions then builds all Linux and Windows binaries, creates
-`SHA256SUMS`, and attaches the files to the corresponding GitHub Release. The
-direct download links above always resolve to the latest release.
 
 You can also cross-compile one specific target directly:
 
